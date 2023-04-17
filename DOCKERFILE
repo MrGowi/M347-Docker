@@ -16,3 +16,4 @@ COPY . .
 # Starten Sie die Webapplikation
 CMD ["node", "index.js"]
 
+# Github Probe
