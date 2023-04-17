@@ -1,13 +1,18 @@
+# Verwenden Sie das Node.js-Basisimage
 FROM node:14-alpine
 
+# Setzen Sie das Arbeitsverzeichnis im Container
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+# Erstellen Sie eine package.json-Datei
+RUN echo '{}' > package.json
 
-RUN npm ci --only=production
+# Installieren Sie die erforderlichen Abhängigkeiten
+RUN npm install express
 
+# Kopieren Sie die Webapplikation in den Container
 COPY . .
 
-EXPOSE 3000
+# Starten Sie die Webapplikation
+CMD ["node", "app.js"]
 
-CMD ["node", "index.js"]
