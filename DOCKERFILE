@@ -2,7 +2,7 @@
 FROM node:14-alpine
 
 # Setzen Sie das Arbeitsverzeichnis im Container
-WORKDIR /app
+WORKDIR /Projetk-datum
 
 # Erstellen Sie eine package.json-Datei
 RUN echo '{}' > package.json
@@ -14,5 +14,5 @@ RUN npm install express
 COPY . .
 
 # Starten Sie die Webapplikation
-CMD ["node", "app.js"]
+CMD ["node", "index.js"]
 
